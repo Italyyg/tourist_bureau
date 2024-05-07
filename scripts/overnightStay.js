@@ -55,6 +55,8 @@ let message =`
 <div>Tax: $${taxOff.toFixed(2)}</div>
 <div>Total cost of stay: $${fullAmount.toFixed(2)}</div>
 `
+//adding message to screen
+document.querySelector("#results").innerHTML=message;
 
 
 }
