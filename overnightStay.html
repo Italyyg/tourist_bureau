@@ -59,18 +59,18 @@
                 <input id="visitingDays" name="visitingDays" type="number" min="1" max="28" required>
             </div>
             <h4>Select a room</h4>
-            <div class="mb-3">
-                <input type="radio" name="queen" id="queen" value="queen" checked>
-                <label for="queen">Queen Suite</label>
-                <input type="radio" name="king" id="king" value="king">
-                <label for="king">King Suite</label>
-                <input type="radio" name="twoBed" id="twoBed" value="twoBed">
-                <label for="twoBed">2-Bedroom Suite</label>
+            <div class="mb-3" >
+                <input type="radio" name="roomType" id="queen" value="queen" checked>
+                <label for="queen">Queen</label>
+                <input type="radio" name="roomType" id="king" value="king">
+                <label for="king">King</label>
+                <input type="radio" name="roomType" id="suite" value="suite">
+                <label for="suite">2-Bedroom Suite</label>
             </div>
             <div class="mb-3">
                 <label for="numberOfAdults">Number of Adults (18+) :</label>
                 <input id="numberOfAdults" name="numberOfAdults" type="number" min="1" max="4" required>
-                <label for="numberOfChildren">Number of Childeren:</label>
+                <label for="numberOfChildren">Number of Children:</label>
                 <input id="numberOfChildren" name="numberOfChildren" type="number" min="0" max="4">
 
             </div>
@@ -79,9 +79,9 @@
                 <input type="radio" name="none" id="none" value="none" checked>
                 <label for="none">None</label>
                 <input type="radio" name="senior" id="senior" value="senior">
-                <label for="senior">AAA/Senior</label>
+                <label for="senior">AAA/Senior(10%)</label>
                 <input type="radio" name="military" id="military" value="military">
-                <label for="military">Military</label>
+                <label for="military">Military(20%)</label>
             </div>
             <button btn-primary>Estimate My Stay</button>
         </form>
