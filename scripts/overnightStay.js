@@ -21,8 +21,8 @@ function vacationFee(event) {
     let roomTotal = stayForm.visitingDays.value * getRoomRate(stayForm.checkIn.value, stayForm.roomType.value)
 
     //testing if it works
-     console.log("you submitted the form!");
-     console.log(stayForm.checkIn.value);
+    console.log("you submitted the form!");
+    console.log(stayForm.checkIn.value);
 
 
 }
@@ -30,17 +30,29 @@ function getRoomRate(checkIn, roomType) {
 
     //get the room based on date and room type
     let rate = 150;
-    let date= checkIn.split("-")[1]
-    console.log(date)
+    let date = checkIn.split("-")[1]
+    //console.log(date)
 
     if (roomType === "suite") {
-        rate = 250;
+        rate = 210;
     }
 
-    return 150;
+    if (date >= 6 && date <= 8) {
+        rate = 250;
+       // console.log("holis");
+        if (roomType === "suite") {
 
-
-
-
+            rate = 350;
+        }
+    }
+    console.log(rate)
+   // return 150;
 }
+
+
+
+
+
+
+
 
