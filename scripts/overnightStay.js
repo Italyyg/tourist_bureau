@@ -43,16 +43,16 @@ function vacationFee(event) {
     //console.log(stayForm.checkIn.value);
 
 let discountRoom = roomTotal- (roomTotal*priceOff)
-let taxOff = discountRoom*(12/100);
+let taxAmount = discountRoom*(12/100);
 
-let fullAmount = discountRoom - taxOff;
+let fullAmount = discountRoom + taxAmount;
 console.log("Total due $" + fullAmount)
 
 let message =`
 <div> The original Room cost: $${roomTotal}</div>
 <div>The discount applied: ${priceOff.toFixed(2)}</div>
 <div>The discounted room price: $${discountRoom}</div>
-<div>Tax: $${taxOff.toFixed(2)}</div>
+<div>Tax: $${taxAmount.toFixed(2)}</div>
 <div>Total cost of stay: $${fullAmount.toFixed(2)}</div>
 `
 //adding message to screen
