@@ -19,10 +19,42 @@ function vacationFee(event) {
     //we have selected the form so now with target, we can select ID's easier
     let stayForm = event.target;
     let roomTotal = stayForm.visitingDays.value * getRoomRate(stayForm.checkIn.value, stayForm.roomType.value)
+    console.log(`The total room amount: $${roomTotal} for the number of nights of ${Number(stayForm.visitingDays.value)} on the day ${stayForm.checkIn.value}`);
 
+
+
+    let priceOff = 0;
+    if (stayForm.discount.value === "senior") {
+
+        //attaching the discoun to the value
+        priceOff = (10 / 100);
+
+    }
+    if (stayForm.discount.value === "military") {
+
+        //attaching the discoun to the value
+        priceOff = (20 / 100);
+
+    }
+
+    //console.log(priceOff)
     //testing if it works
-    console.log("you submitted the form!");
-    console.log(stayForm.checkIn.value);
+    // console.log("you submitted the form!");
+    //console.log(stayForm.checkIn.value);
+
+let discountRoom = roomTotal- (roomTotal*priceOff)
+let taxOff = discountRoom*(12/100);
+
+let fullAmount = discountRoom - taxOff;
+console.log("Total due $" + fullAmount)
+
+let message =`
+<div> The original Room cost: $${roomTotal}</div>
+<div>The discount applied: ${priceOff.toFixed(2)}</div>
+<div>The discounted room price: $${discountRoom}</div>
+<div>Tax: $${taxOff.toFixed(2)}</div>
+<div>Total cost of stay: $${fullAmount.toFixed(2)}</div>
+`
 
 
 }
@@ -39,18 +71,19 @@ function getRoomRate(checkIn, roomType) {
 
     if (date >= 6 && date <= 8) {
         rate = 250;
-       // console.log("holis");
+        // console.log("holis");
         if (roomType === "suite") {
 
             rate = 350;
         }
     }
-    console.log(rate)
-   // return 150;
+    //console.log(rate)
+    return rate
+
+
+
+
 }
-
-
-
 
 
 
